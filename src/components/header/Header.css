@@ -1,0 +1,24 @@
+.header{
+    height: 80px;
+    background-color: #1C2B35;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px;
+
+}
+@media screen and (max-width:500px){
+    .header{
+    flex-direction: column;
+    height: 100px;
+    justify-content: center;
+    }
+}
+nav.header a{
+    text-decoration: none;
+    color: white;
+    margin-left: 30px;
+}
+nav.header a:hover{
+    color: orange;
+}

@@ -1,0 +1,28 @@
+.main-container{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    column-gap: 40px;
+    
+}
+.product-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    row-gap: 20px;
+    column-gap: 20px;
+    padding:50px  100px;
+}
+@media screen and (max-width:500px){
+    .product-container{
+        grid-template-columns: 1fr;
+        padding: 20px ;
+    }
+    .main-container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.order-container{
+    text-align: center;
+    background-color: orange;
+    color: white;
+   padding: 10px;
+}
