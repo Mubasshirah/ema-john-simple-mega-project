@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Cart from '../cart/Cart';
 import Product from '../product/Product';
-import { addToDb, getShoppingCart } from '../utilities/Utilities';
+import { addToDb, deleteDb, getShoppingCart } from '../utilities/Utilities';
 import './Shop.css'
+import { Link } from 'react-router-dom';
+import Order from '../Order/Order';
 
 const Shop = () => {
     const [products,setProducts]=useState([]);
@@ -30,6 +32,10 @@ const Shop = () => {
         setCart(newCart);
          addToDb(product.id)         
     }
+    const clearCart=()=>{
+        setCart([]);
+        deleteDb();
+    }
     return (
         <div className='main-container'>
             <div className="product-container">
@@ -38,7 +44,9 @@ const Shop = () => {
             }
             </div>
             <div className="order-container"> 
-          <Cart cart={cart}></Cart>
+          <Cart cart={cart} clearCart={clearCart}>
+            <Link to='/order'><button>See order</button></Link>
+          </Cart>
             </div>
         </div>
     );

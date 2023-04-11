@@ -4,6 +4,8 @@ import './cart.css'
 
 const Cart = (props) => {
     const cart=props.cart;
+    const clearCart=props.clearCart;
+    const children=props.children;
     console.log(cart);
     let total=0;
     let shipping=0;
@@ -26,7 +28,8 @@ const Cart = (props) => {
             <p>Total shipping charge:${shipping}</p>
             <p>Tax:${tax.toFixed(2)}</p>
             <h6>Grand Total:${grand}</h6>
-           <button onClick={()=>deleteDb()}>remove</button>
+           <button onClick={clearCart}>Clear cart</button>
+           {children}
         </div>
     );
 };
